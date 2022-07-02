@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <a class="created_by" href="http://ateendra.epizy.com">#CREATED BY ATEENDRA </a>
+    <table class="calc">
+
+        <tr>
+            <td colspan="4"><input type="text" placeholder="0" id="result" disabled /></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" class="c" value="AC" onclick="Allclr()"> </td>
+            <td><input type="button" class="c" value="+/-" onclick="minus()"> </td>
+            <td><input type="button" class="c" value="%" onclick="dis('%')"> </td>
+            <td><input type="button" class="yellow" value="/" onclick="dis('/')"> </td>
+        </tr>
+
+        <tr>
+            <td><input class="b" type="button" value="7" onclick="dis('7')"> </td>
+            <td><input class="b" type="button" value="8" onclick="dis('8')"> </td>
+            <td><input class="b" type="button" value="9" onclick="dis('9')"> </td>
+            <td><input type="button" class="yellow" value="X" onclick="dis('*')"> </td>
+        </tr>
+
+        <tr>
+            <td><input class="b" type="button" value="4" onclick="dis('4')"> </td>
+            <td><input class="b" type="button" value="5" onclick="dis('5')"> </td>
+            <td><input class="b" type="button" value="6" onclick="dis('6')"> </td>
+            <td><input type="button" class="yellow" value="-" onclick="dis('-')"> </td>
+        </tr>
+
+        <tr>
+            <td><input class="b" type="button" value="1" onclick="dis('1')"> </td>
+            <td><input class="b" type="button" value="2" onclick="dis('2')"> </td>
+            <td><input class="b" type="button" value="3" onclick="dis('3')"> </td>
+            <td><input type="button" class="yellow" value="+" onclick="dis('+')"> </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align:center;"><input class="b"
+                    style="width: 200px;border-radius: 50px;background-color: #444;color:white" type="button" value="0"
+                    onclick="dis('0')"> </td>
+            <td><input class="b" type="button" value="." onclick="dis('.')"> </td>
+            <td><input type="button" class="yellow" value="=" onclick="solve()"> </td>
+
+        </tr>
+
+    </table>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .calc tr td {
+            padding: 4px;
+        }
+
+        input[type="button"] {
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+            border-radius: 50%;
+            text-align: center;
+            vertical-align: center;
+            border: none;
+        }
+
+        input[type="text"] {
+            width: 400px;
+            height: 100px;
+            font-size: 80px;
+            border: none;
+            text-align: right;
+            color: white;
+            background: transparent;
+        }
+
+        .calc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 50px;
+        }
+
+        .yellow {
+            background-color: #FF9500;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .yellow:active {
+            color: #FF9500;
+            background-color: white;
+        }
+
+        .c {
+            background-color: #D4D4D2;
+            color: black;
+        }
+
+        .c:active {
+            background-color: #f6f6f6;
+        }
+
+        .b {
+            background-color: #444;
+            color: white
+        }
+
+        .b:active {
+            background-color: rgb(119, 119, 119);
+        }
+
+        .created_by {
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 10px;
+            margin-left: 5px;
+            position: absolute;
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val
+        }
+        function minus() {
+            document.getElementById("result").value += value * (-1)
+        }
+        function solve() {
+            let x = document.getElementById("result").value
+            let y = eval(x)
+            document.getElementById("result").value = y
+        }
+        function Allclr() {
+            document.getElementById("result").value = ""
+        }
+        function clr() {
+            document.getElementById("result").value = ""
+        }
+
+    </script>
+</body>
+
+</html>
